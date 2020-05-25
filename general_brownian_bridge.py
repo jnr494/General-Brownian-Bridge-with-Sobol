@@ -13,7 +13,7 @@ from torch.quasirandom import SobolEngine
 
 def create_general_brownian_bridge(n_sim, n_steps, n_process, end_time):
     #Inputs are intergers
-    #Output is a numpy array with dimension [n_sim,n_steps,n_process]
+    #Output is a numpy array with dimension [n_sim,n_steps + 1,n_process]
     #The output is n_sim of a n_process dimensional brownian motions contructed using Sobol Numbers and a Brownian Bridge construction.
     #There are no correlation between the different brownian motions
     
@@ -80,4 +80,6 @@ def create_general_brownian_bridge(n_sim, n_steps, n_process, end_time):
             cur_z_nr += 1
     
     return W
+
+
 
